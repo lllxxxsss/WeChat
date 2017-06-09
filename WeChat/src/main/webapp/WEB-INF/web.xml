@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+						http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="LRD_WeChat_Portal1" version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+	
+	
+<!-- Spring和mybatis的配置文件 -->
+	<!-- <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-mybatis.xml</param-value>
+	</context-param> -->
+	<!-- 编码过滤器UTF-8 -->
+	<!-- <filter>  
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+        <init-param>  
+            <param-name>encoding</param-name>  
+            <param-value>UTF-8</param-value>  
+        </init-param>  
+        <init-param>  
+            <param-name>forceEncoding</param-name>  
+            <param-value>true</param-value>  
+        </init-param>  
+   </filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+	<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener> -->
+
+	  <!-- <servlet>
+		<servlet-name>Dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				classpath:spring-mvc.xml;
+				消息解析器
+				classpath:spring-core.xml;
+				关键字解析器
+				classpath:spring-kwd.xml;
+			</param-value>
+		</init-param>
+		设置Spring IOC容器可以通过ServletContext访问
+		<init-param>
+			<param-name>publishContext</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping> -->
+
+	<!-- Portal接入微信服务器Servlet -->
+	<servlet>
+		<servlet-name>portalServlet</servlet-name>
+		<servlet-class>com.wechat.portal.PortalServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>portalServlet</servlet-name>
+		<url-pattern>/PortalServlet</url-pattern>
+	</servlet-mapping>
+		<!-- 手机短信发送功能能 -->
+	<!--
+	<servlet>
+		<display-name>SendDSMSServlet</display-name>
+		<servlet-name>SendDSMSServlet</servlet-name>
+		<servlet-class>com.lrd.wechat.servlet.SendDSMSServlet</servlet-class>
+		<init-param>
+			<param-name>url</param-name>
+			<param-value>http://112.33.1.10/app/sdk/login</param-value>
+		</init-param>
+		<init-param>
+			<param-name>user</param-name>
+			<param-value>clnsh</param-value>
+		</init-param>
+		<init-param>
+			<param-name>passwd</param-name>
+			<param-value>clnsh118</param-value>
+		</init-param>
+		<init-param>
+			<param-name>sdn</param-name>
+			<param-value>山东昌乐农村商业银行股份有限公司</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet> 
+	-->
+</web-app>
